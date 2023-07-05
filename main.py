@@ -21,6 +21,7 @@ from ldm.data.base import Txt2ImgIterableBaseDataset
 from ldm.util import instantiate_from_config
 
 
+#引数の獲得
 def get_parser(**parser_kwargs):
     def str2bool(v):
         if isinstance(v, bool):
