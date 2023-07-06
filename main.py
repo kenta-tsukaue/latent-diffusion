@@ -513,9 +513,12 @@ if __name__ == "__main__":
     cfgdir = os.path.join(logdir, "configs")
     seed_everything(opt.seed)
 
+    print("cfgdir",cfgdir)
+
     try:
         # init and save configs
         configs = [OmegaConf.load(cfg) for cfg in opt.base]
+        print("configs", configs)
         cli = OmegaConf.from_dotlist(unknown)
         config = OmegaConf.merge(*configs, cli)
         lightning_config = config.pop("lightning", OmegaConf.create())
