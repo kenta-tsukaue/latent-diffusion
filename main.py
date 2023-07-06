@@ -473,6 +473,7 @@ if __name__ == "__main__":
 
     opt, unknown = parser.parse_known_args()
     print("opt", opt)
+    print("unknown", unknown)
     if opt.name and opt.resume:
         raise ValueError(
             "-n/--name and -r/--resume cannot be specified both."
