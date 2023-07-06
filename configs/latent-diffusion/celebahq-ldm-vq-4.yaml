@@ -58,6 +58,7 @@ model:
         lossconfig:
           target: torch.nn.Identity
     cond_stage_config: __is_unconditional__
+
 data:
   target: main.DataModuleFromConfig
   params:
