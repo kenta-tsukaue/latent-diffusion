@@ -93,7 +93,8 @@ def get_obj_from_str(string, reload=False):
     print("module",module)
     print("cls", cls)
     if cls == "TestTubeLogger":
-        cls == "TensorBoardLogger"
+        cls = "TensorBoardLogger"
+    print("cls-after", cls)
     return getattr(importlib.import_module(module, package=None), cls)
 
 
