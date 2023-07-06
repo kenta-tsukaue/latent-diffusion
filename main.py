@@ -536,6 +536,7 @@ if __name__ == "__main__":
         lightning_config.trainer = trainer_config
 
         # model
+        print(config)
         model = instantiate_from_config(config.model)
 
         # trainer and callbacks
