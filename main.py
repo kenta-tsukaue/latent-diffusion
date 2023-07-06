@@ -520,7 +520,7 @@ if __name__ == "__main__":
     try:
         # init and save configs
         configs = [OmegaConf.load(cfg) for cfg in opt.base]
-        print("configs", configs)
+        #print("configs", configs)
         cli = OmegaConf.from_dotlist(unknown)
         config = OmegaConf.merge(*configs, cli)
         lightning_config = config.pop("lightning", OmegaConf.create())
@@ -541,7 +541,7 @@ if __name__ == "__main__":
         lightning_config.trainer = trainer_config
 
         # model
-        print(config)
+        #print(config)
         model = instantiate_from_config(config.model)
 
         # trainer and callbacks
