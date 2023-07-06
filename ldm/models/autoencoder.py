@@ -10,6 +10,8 @@ from ldm.modules.distributions.distributions import DiagonalGaussianDistribution
 
 from ldm.util import instantiate_from_config
 
+import pickle
+
 
 class VQModel(pl.LightningModule):
     def __init__(self,
@@ -77,6 +79,9 @@ class VQModel(pl.LightningModule):
 
     def init_from_ckpt(self, path, ignore_keys=list()):
         print("ここまではきています")
+        with open('data.pickle', 'rb') as file:
+            data = pickle.load(file)
+            print(data)
         sd = torch.load(path, map_location="cpu")["state_dict"]
         print("ここまではきています")
         keys = list(sd.keys())
